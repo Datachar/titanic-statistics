@@ -8,5 +8,7 @@
 8. Analisys field Name(considering field Sex) and found most popular female name
 9. Calculate probability of survaving the passenger to age + class + gender
 10. Pass structure with results on output
-11. Organize the display of results
-12. Exception handling
+11. Learn to use PyQt
+12. Learn how to visual data
+13. Organize the display of results
+14. Exception handling
