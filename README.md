@@ -1,7 +1,7 @@
 # titanic-statistics
 Simple QT app with statistics of titanic passengers
 
-### Calculation task:
+### Calculation task (pandas):
 - ammount of male and female on the ship
 - precent of survived passengers 
 - percent of first class pessengers
