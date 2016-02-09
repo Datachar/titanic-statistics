@@ -1,14 +1,4 @@
-1. Rear file
-2. Create structure for saving results
-3. Analisys field sex. Count number male and female
-4. Analisys field Survived. Calculate percent survived
-5. Analisys field Pclass. Calculate percent passenger first class
-6. Count age of passengers. mean and median
-7. Analisys correlation between "SibSp" and "Parch"
-8. Analisys field Name(considering field Sex) and found most popular female name
-9. Calculate probability of survaving the passenger to age + class + gender
-10. Pass structure with results on output
-11. Learn to use PyQt
-12. Learn how to visual data
-13. Organize the display of results
-14. Exception handling
+1. Learn to use PyQt
+2. Learn how to visual data
+3. Organize the display of results
+4. Exception handling
