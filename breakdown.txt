@@ -1,10 +1,10 @@
-Зрозуміти структуру .cvs і навчитись опрацьовувати і працювати з вхідними даними
-Створити структуру даних для відображення і працювання з даними
-Обчислити кількість жінок і чоловіків які знаходяться на кораблі
-Обчислити процент кількості виживших пасажирів на кораблі, кількості осбі які їхали першим класом
-Обчислити середній вік пасажиріві і знайти найбільш розповсюджений вік
-Зрозуміти взаємо звязок і знайти його між "SibSp" і "Parch"
-Знайти найпопулярніше ім'я серед жінок на борту
-Знайти імовірність, за введеними даними (вік, клас, стать), того що пасажир виживе за допомогою вище описаних даних
-Опрацювати вхідні і вихідні дані для візуалізації
-Обробити виключні ситуації
+1. Understand the structure .csv and learn to handle and work with input
+2. Create a data structure for displaying and operating a data
+3. Calculate the number of women and men who are on the ship
+4. Calculate the percentage of the number of surviving passengers on the ship, the number of people who were traveling first class
+5. Calculate the average age of the passengers and to find the most common age
+6. Understand mutual connectivity between the "SibSp" and "Parch"
+7. Find the most popular name among women on board
+8. Find the probability for the entered data (age, class, gender) that the passenger will survive with the help of the above described data
+9. Parse incoming and outgoing data transferred visualization
+10. Process exceptional situation
