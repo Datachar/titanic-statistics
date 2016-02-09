@@ -1,12 +1,12 @@
-1. зчитати файл(???)
-2. створити структуру для збереження результатів
-3. провести аналіз поля sex. підразувати к-ть male і female
-4. аналіз поля Survived. вирахувати процент виживших
-5. аналіз поля Pclass. вирахувати процент пасажирів 1 класу
-6. порахувати середній вік пасажирів і знайти найбільш розповсюджений вік
-7. аналіз взаємозвязків між полями SibSp і Parch
-8. проаналізувати поле name(враховуючи sex) і знайти найпопулярніше жіноче ім’я
-9. вирахувати ймовірність виживання пасажира вікової + класу + статі(цікаво як??)
-10. передати попередньо створену структуру з результатами на вивід
-11. організувати відображення результатів
-12. обробка виключень
+1. Rear file
+2. Create structure for saving results
+3. Analisys field sex. Count number male and female
+4. Analisys field Survived. Calculate percent survived
+5. Analisys field Pclass. Calculate percent passenger first class
+6. Count age of passengers. mean and median
+7. Analisys correlation between "SibSp" and "Parch"
+8. Analisys field Name(considering field Sex) and found most popular female name
+9. Calculate probability of survaving the passenger to age + class + gender
+10. Pass structure with results on output
+11. Organize the display of results
+12. Exception handling
