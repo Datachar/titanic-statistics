@@ -11,6 +11,6 @@ Simple QT app with statistics of titanic passengers
 - probability of survaving the passenger to age + class + gender
 
 
-### Visualisation task (QT desktop app):
+### Visualization task (QT desktop app):
 - create desctop app that will show the result of calculations dynamically
 - show probability of survining of the passenger from user input data of age + class + gender
