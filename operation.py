@@ -1,6 +1,6 @@
 from pandas import DataFrame, read_csv
 import pandas as pd
-from passenge import Passenger
+from passenger import Passenger
 from collections import Counter
 
 
