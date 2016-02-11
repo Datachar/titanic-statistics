@@ -1,50 +1,114 @@
 import sys
 
-from PyQt5.QtWidgets import (QApplication, QWidget, QToolTip, QPushButton)
-from PyQt5.QtGui import QFont
+from PyQt5.QtWidgets import QWidget, QApplication, QLabel, QVBoxLayout, QTextBrowser, QLineEdit, QGridLayout, QPushButton
+from PyQt5.QtGui import QTextLayout
+
+from passenger import Passenger
+#from utils import create_analysis_widget
 
 
-class Example(QWidget):
-
+class TitanicStatApp(QWidget):
     def __init__(self):
-        super().__init__()
+        # self.analysis_data = {}
+        self.main_windows = None
+        self.main_layout = None
 
-        self.initUi()
+        self.sum_male = None
+        self.sum_female = None
+        self.percent_of_surviving = None
+        self.age_mean = None
+        self.age_median = None
+        self.most_popular_female_name = None
+        self.prob_of_surviving = None
+        self.form_layout = None
 
-    def initUi(self):
-       # QToolTip.setFont(QFont('SansSerif', 10))
+    def run(self):
+        app = QApplication(sys.argv)
 
-        self.setToolTip('This is a <b>QWidget</b> widget')
+        self.main_windows = None
+        self.main_windows = QWidget()
 
-        btn = QPushButton('Button', self)
-        btn.setToolTip('This is a <b>QPushButton</b> widget')
-        btn.resize(btn.sizeHint())
-        btn.move(50, 50)
+        self.main_windows.setWindowTitle('title')
+        self.main_windows.resize(400, 400)
+        # self.main_layout = QTextLayout()
 
-        self.setGeometry(300, 300, 300, 200)
-        self.setWindowTitle('Tooltips')
-        self.show()
+        self.sum_male = QLabel(get_sum_male('Amount male'), self.main_windows)
+        self.sum_male.move(20, 20)
 
-if __name__ == '__main__':
+        self.sum_female = QLabel(get_sum_female('Amount female'), self.main_windows)
+        self.sum_female.move(20, 40)
 
-    app = QApplication(sys.argv)
-    ex = Example()
-    sys.exit(app.exec_())
-'''
+        self.percent_of_surviving = QLabel(get_percent_of_survived('Percent of first class passengers'), self.main_windows)
+        self.percent_of_surviving.move(20, 60)
 
+        self.age_mean = QLabel(get_age_mean('Mean age of passengers'), self.main_windows)
+        self.age_mean.move(20, 80)
 
-if __name__ == '__main__':
-    app = QApplication(sys.argv)
+        self.age_median = QLabel(get_age_median('Median age of passengers'), self.main_windows)
+        self.age_median.move(20, 100)
 
-    window = QWidget()
-    window.resize(250, 150)
-    window.move(300,300)
-    window.setWindowTitle('Simple')
+        self.most_popular_female_name = None
 
-    label =
+        self.form_layout.addLayout(self.prob_of_surv())
+        self.main_windows.show()
+        sys.exit(app.exec_())
 
-
-    window.show()
-
-    sys.exit(app.exec_())
     '''
+    def btn_action(self):
+        btn = QPushButton('ok')
+        btn.clicked.connect()
+    '''
+
+    def prob_of_surv(self):
+        age = QLabel('Age')
+        klass = QLabel('Class')
+        gender = QLabel('Gender')
+
+        ageEdit = QLineEdit()
+        klassEdit = QLineEdit()
+        genderEdit = QLineEdit()
+
+        grid = QGridLayout()
+        grid.setSpacing(20)
+
+        grid.addWidget(klass, 1, 0)
+        grid.addWidget(klassEdit, 1, 1)
+
+        grid.addWidget(age, 2, 0)
+        grid.addWidget(ageEdit, 2, 1)
+
+        grid.addWidget(gender, 3, 0)
+        grid.addWidget(genderEdit, 3, 1)
+
+        self.setLayout(grid)
+        self.resize()
+        return grid
+
+
+def get_sum_male(text):
+    res = text + ': ' + str(Passenger.sum_male())
+    return res
+
+
+def get_sum_female(text):
+    res = text + ': ' + str(Passenger.sum_female())
+    return res
+
+
+def get_percent_of_survived(text):
+    res = text + ': ' + str(Passenger.per_of_survived())
+    return res
+
+
+def get_age_mean(text):
+    res = text + ': ' + str(Passenger.age_mean())
+    return res
+
+
+def get_age_median(text):
+    res = text + ': ' + str(Passenger.age_median())
+    return res
+
+# def get_probability_of_surviving(text, )
+
+
