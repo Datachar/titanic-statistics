@@ -51,7 +51,8 @@ class TitanicStatApp:
         self.form_layout = self.prob_of_surv()
       #  self.form_layout.setDefaultPositioning()
         self.main_windows.setLayout(self.form_layout)
-        # self.main_windows.
+       # self.main_windows.unsetLayoutDirection()
+       # self.main_windows.
         self.main_windows.show()
         sys.exit(app.exec_())
 
@@ -71,6 +72,7 @@ class TitanicStatApp:
         genderEdit = QLineEdit()
 
         grid = QGridLayout()
+        grid.activate()
         grid.setSpacing(10)
 
         grid.addWidget(klass, 1, 0)
