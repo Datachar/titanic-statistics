@@ -1,13 +1,13 @@
 import sys
 
-from PyQt5.QtWidgets import QWidget, QApplication, QLabel, QVBoxLayout, QTextBrowser, QLineEdit, QGridLayout, QPushButton
+from PyQt5.QtWidgets import QWidget, QApplication, QLabel, QVBoxLayout, QTextBrowser, QLineEdit, QGridLayout, QPushButton, QLayout
 from PyQt5.QtGui import QTextLayout
 
 from passenger import Passenger
 #from utils import create_analysis_widget
 
 
-class TitanicStatApp(QWidget):
+class TitanicStatApp:
     def __init__(self):
         # self.analysis_data = {}
         self.main_windows = None
@@ -25,7 +25,6 @@ class TitanicStatApp(QWidget):
     def run(self):
         app = QApplication(sys.argv)
 
-        self.main_windows = None
         self.main_windows = QWidget()
 
         self.main_windows.setWindowTitle('title')
@@ -49,7 +48,10 @@ class TitanicStatApp(QWidget):
 
         self.most_popular_female_name = None
 
-        self.form_layout.addLayout(self.prob_of_surv())
+        self.form_layout = self.prob_of_surv()
+      #  self.form_layout.setDefaultPositioning()
+        self.main_windows.setLayout(self.form_layout)
+        # self.main_windows.
         self.main_windows.show()
         sys.exit(app.exec_())
 
@@ -69,7 +71,7 @@ class TitanicStatApp(QWidget):
         genderEdit = QLineEdit()
 
         grid = QGridLayout()
-        grid.setSpacing(20)
+        grid.setSpacing(10)
 
         grid.addWidget(klass, 1, 0)
         grid.addWidget(klassEdit, 1, 1)
@@ -80,8 +82,6 @@ class TitanicStatApp(QWidget):
         grid.addWidget(gender, 3, 0)
         grid.addWidget(genderEdit, 3, 1)
 
-        self.setLayout(grid)
-        self.resize()
         return grid
 
 
