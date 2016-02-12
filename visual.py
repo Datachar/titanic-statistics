@@ -75,7 +75,7 @@ class TitanicStatApp:
         input_age = int(input_age)
         input_class = int(input_class)
         input_gender = str(input_gender)
-        res = QLabel('Probability of surviving: ' + str(pas.probability_of_surviving( \
+        res = QLabel('Probability of surviving: %0.5s' % str(pas.probability_of_surviving( \
             input_age=input_age, input_class=input_class, input_gender=input_gender)))
         grid = QGridLayout()
         grid.setSpacing(5)
@@ -120,12 +120,12 @@ def get_sum_female(text):
 
 
 def get_percent_of_surviving(text):
-    res = text + ': ' + str(pas.percent_of_surviving())
+    res = text + ': %0.5s' % str(pas.percent_of_surviving())
     return str(res)
 
 
 def get_age_mean(text):
-    res = text + ': ' + str(pas.mean_age_of_passenger())
+    res = text + ': %0.5s' % str(pas.mean_age_of_passenger())
     return str(res)
 
 
