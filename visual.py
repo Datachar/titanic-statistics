@@ -1,11 +1,9 @@
 import sys
 import pandas as pd
 
-from pandas import read_csv
-
-from PyQt5.QtWidgets import QWidget, QApplication, QLabel, QVBoxLayout, QLineEdit, QGridLayout, QPushButton, QMessageBox
-
+from PyQt5.QtWidgets import QWidget, QApplication, QLabel, QVBoxLayout, QLineEdit, QGridLayout, QPushButton
 from passenger import Passengers
+
 
 df = pd.read_csv(r'titanic.csv')
 pas = Passengers(df)
@@ -29,7 +27,7 @@ class TitanicStatApp:
         self.main_windows.resize(370, 300)
 
         self.form_layout = self.probably_of_static()
-        self.analysis_layout = self.visual_analysis_data()
+        self.analysis_layout = visual_analysis_data()
 
         self.main_layout.addLayout(self.analysis_layout)
         self.main_layout.addLayout(self.form_layout)
@@ -85,29 +83,30 @@ class TitanicStatApp:
         self.result_layout = grid
         self.main_layout.addLayout(self.result_layout)
 
-    def visual_analysis_data(self):
-        grid = QGridLayout()
-        grid.setSpacing(5)
 
-        sum_male = QLabel(get_sum_male('Amount male'))
-        grid.addWidget(sum_male, 1, 0)
+def visual_analysis_data():
+    grid = QGridLayout()
+    grid.setSpacing(5)
 
-        sum_female = QLabel(get_sum_female('Amount female'))
-        grid.addWidget(sum_female, 2, 0)
+    sum_male = QLabel(get_sum_male('Amount male'))
+    grid.addWidget(sum_male, 1, 0)
 
-        percent_of_surviving = QLabel(get_percent_of_surviving('Percent of first class passengers'))
-        grid.addWidget(percent_of_surviving, 3, 0)
+    sum_female = QLabel(get_sum_female('Amount female'))
+    grid.addWidget(sum_female, 2, 0)
 
-        age_mean = QLabel(get_age_mean('Mean age of passengers'))
-        grid.addWidget(age_mean, 4, 0)
+    percent_of_surviving = QLabel(get_percent_of_surviving('Percent of first class passengers'))
+    grid.addWidget(percent_of_surviving, 3, 0)
 
-        age_median = QLabel(get_age_median('Median age of passengers'))
-        grid.addWidget(age_median, 5, 0)
+    age_mean = QLabel(get_age_mean('Mean age of passengers'))
+    grid.addWidget(age_mean, 4, 0)
 
-        most_popular_female_name = QLabel(get_most_popular_female_name('Most popular female name'))
-        grid.addWidget(most_popular_female_name, 6, 0)
+    age_median = QLabel(get_age_median('Median age of passengers'))
+    grid.addWidget(age_median, 5, 0)
 
-        return grid
+    most_popular_female_name = QLabel(get_most_popular_female_name('Most popular female name'))
+    grid.addWidget(most_popular_female_name, 6, 0)
+
+    return grid
 
 
 def get_sum_male(text):

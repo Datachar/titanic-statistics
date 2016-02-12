@@ -53,6 +53,10 @@ coverage.xml
 *.log
 
 # Sphinx documentation
+/passenger.py
+/test_Passengers.py
+/titanic.csv
+/breakdown.txt
 docs/_build/
 
 # PyBuilder
@@ -65,4 +69,5 @@ target/
 
 README.md
 titanic.csv
+/operation.py
 .gitignore
