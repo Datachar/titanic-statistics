@@ -3,7 +3,7 @@ import pandas as pd
 from functools import partial
 from pandas import read_csv
 
-from PyQt5.QtWidgets import QWidget, QApplication, QLabel, QVBoxLayout, QLineEdit, QGridLayout, QPushButton
+from PyQt5.QtWidgets import QWidget, QApplication, QLabel, QVBoxLayout, QLineEdit, QGridLayout, QPushButton, QMessageBox
 
 from passenger import Passengers
 
@@ -75,14 +75,23 @@ class TitanicStatApp:
         input_age = int(input_age)
         input_class = int(input_class)
         input_gender = str(input_gender)
-        res = QLabel('Probability of surviving: ' + str(pas.probability_of_surviving( \
-            input_age=input_age, input_class=input_class, input_gender=input_gender)))
-        grid = QGridLayout()
-        grid.setSpacing(5)
+        if input_age < 1 or 3 < input_class < 0 or input_gender != 'male' or input_gender != 'female':
+            print('bad input')
+            '''
+            message = QMessageBox()
+            message.setText('bad input')
+            message.move(20, 20)
+            message.show()
+            '''
+        else:
+            res = QLabel('Probability of surviving: %0.5s' % str(pas.probability_of_surviving( \
+                input_age=input_age, input_class=input_class, input_gender=input_gender)))
+            grid = QGridLayout()
+            grid.setSpacing(5)
 
-        grid.addWidget(res, 1,1)
-        self.result_layout = grid
-        self.main_layout.addLayout(self.result_layout)
+            grid.addWidget(res, 1,1)
+            self.result_layout = grid
+            self.main_layout.addLayout(self.result_layout)
 
     def visual_analysis_data(self):
         grid = QGridLayout()
@@ -120,12 +129,12 @@ def get_sum_female(text):
 
 
 def get_percent_of_surviving(text):
-    res = text + ': ' + str(pas.percent_of_surviving())
+    res = text + ': %0.5s' % str(pas.percent_of_surviving())
     return str(res)
 
 
 def get_age_mean(text):
-    res = text + ': ' + str(pas.mean_age_of_passenger())
+    res = text + ': %0.5s' % str(pas.mean_age_of_passenger())
     return str(res)
 
 
@@ -137,6 +146,3 @@ def get_age_median(text):
 def get_most_popular_female_name(text):
     res = text + ': ' + str(pas.most_popular_female_name()[0])
     return str(res)
-
-
-
