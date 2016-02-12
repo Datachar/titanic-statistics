@@ -48,7 +48,7 @@ class Passengers:
                     name.append(i)
         word_counts = Counter(name)
         top_three = word_counts.most_common(1)
-        return top_three[0][0]
+        return top_three[0]
 
     def probability_of_surviving(self, input_age, input_class, input_gender):
         count_survaving_age = self.df['PassengerId'].where(self.df['Age'] == input_age).where(
