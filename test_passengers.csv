@@ -1,0 +1,7 @@
+PassengerId,Sex,Survived,Age,Pclass,Name
+1,male,0,2,1,"Navratil, Master. Edmond Roger"
+2,female,1,8,2,"Davison, Mrs. Thomas Henry (Mary E Finck)"
+3,female,1,0,3,"Brown, Miss. Mary ""Mildred"""
+4,female,0,4,1,"Moussa, Mrs. (Anna Boulos)"
+5,female,1,2,1,"Pain Olala, Dr. Mary"
+6,,0,2,3,"Emanuel Shannel, Miss. Virginia Ethel"
