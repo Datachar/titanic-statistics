@@ -8,7 +8,7 @@ Simple QT app with statistics of titanic passengers
 - age of passengers. mean and median
 - correlation between "SibSp" and "Parch"
 - most popular female name on the ship
-- probability of survaving the passenger to age + class + gender
+- probability of surviving the passenger to age + class + gender
 
 
 ### Visualization task (QT desktop app):

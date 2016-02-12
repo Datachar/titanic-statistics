@@ -1,0 +1,4 @@
+1. Learn to use PyQt
+2. Learn how to visual data
+3. Organize the display of results
+4. Exception handling

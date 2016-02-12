@@ -62,3 +62,7 @@ target/
 .ipynb_checkpoints
 
 .idea/
+
+README.md
+titanic.csv
+.gitignore
