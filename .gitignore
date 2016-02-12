@@ -31,6 +31,9 @@ var/
 *.spec
 
 # Installer logs
+/passengers.py
+/test_passengers.py
+/test_passengers_data.csv
 pip-log.txt
 pip-delete-this-directory.txt
 

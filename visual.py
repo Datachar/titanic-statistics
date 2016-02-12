@@ -1,8 +1,7 @@
 import sys
-import pandas as pd
 
 from PyQt5.QtWidgets import QWidget, QApplication, QLabel, QVBoxLayout, QLineEdit, QGridLayout, QPushButton
-from passenger import Passengers
+from passengers import Passengers
 
 
 pas = Passengers(r'titanic.csv')
