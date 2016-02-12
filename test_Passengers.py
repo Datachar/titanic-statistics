@@ -1,5 +1,5 @@
 from unittest.case import TestCase
-from passengers import Passengers
+from passenger import Passengers
 from pandas import DataFrame, read_csv
 import pandas as pd
 
