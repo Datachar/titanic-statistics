@@ -5,7 +5,7 @@ import pandas as pd
 
 class TestPassengers(TestCase):
     def setUp(self):
-        self.pas = Passengers('test_passengers.csv')
+        self.pas = Passengers('test_passengers_data.csv')
 
     def test_sum_male(self):
         self.assertEquals(self.pas.sum_male(), 1)
