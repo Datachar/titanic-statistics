@@ -5,8 +5,7 @@ from PyQt5.QtWidgets import QWidget, QApplication, QLabel, QVBoxLayout, QLineEdi
 from passenger import Passengers
 
 
-df = pd.read_csv(r'titanic.csv')
-pas = Passengers(df)
+pas = Passengers(r'titanic.csv')
 
 
 class TitanicStatApp:
