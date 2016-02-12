@@ -13,7 +13,6 @@ pas = Passengers(df)
 
 class TitanicStatApp:
     def __init__(self):
-        # self.analysis_data = {}
         self.main_windows = None
         self.main_layout = None
         self.form_layout = None
