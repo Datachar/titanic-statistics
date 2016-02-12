@@ -1,6 +1,6 @@
 import sys
 import pandas as pd
-from functools import partial
+
 from pandas import read_csv
 
 from PyQt5.QtWidgets import QWidget, QApplication, QLabel, QVBoxLayout, QLineEdit, QGridLayout, QPushButton, QMessageBox
@@ -75,23 +75,15 @@ class TitanicStatApp:
         input_age = int(input_age)
         input_class = int(input_class)
         input_gender = str(input_gender)
-        if input_age < 1 or 3 < input_class < 0 or input_gender != 'male' or input_gender != 'female':
-            print('bad input')
-            '''
-            message = QMessageBox()
-            message.setText('bad input')
-            message.move(20, 20)
-            message.show()
-            '''
-        else:
-            res = QLabel('Probability of surviving: %0.5s' % str(pas.probability_of_surviving( \
-                input_age=input_age, input_class=input_class, input_gender=input_gender)))
-            grid = QGridLayout()
-            grid.setSpacing(5)
 
-            grid.addWidget(res, 1,1)
-            self.result_layout = grid
-            self.main_layout.addLayout(self.result_layout)
+        res = QLabel('Probability of surviving: %0.5s' % str(pas.probability_of_surviving(
+                input_age=input_age, input_class=input_class, input_gender=input_gender)))
+        grid = QGridLayout()
+        grid.setSpacing(5)
+
+        grid.addWidget(res, 1, 1)
+        self.result_layout = grid
+        self.main_layout.addLayout(self.result_layout)
 
     def visual_analysis_data(self):
         grid = QGridLayout()
