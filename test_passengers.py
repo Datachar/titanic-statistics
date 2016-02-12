@@ -26,7 +26,7 @@ class TestPassengers(TestCase):
         self.assertEquals(self.pas.percent_of_first_class(), 50)
 
     def test_most_popular_female_name(self):
-        self.assertEquals(self.pas.most_popular_female_name(), 'Mary')
+        self.assertEquals(self.pas.most_popular_female_name(), ('Mary', 3))
 
     def test_probability_of_surviving(self):
         self.assertEquals(self.pas.probability_of_surviving(2, 1, 'female'), 47.222222222222214)
