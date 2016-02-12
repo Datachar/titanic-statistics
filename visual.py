@@ -1,11 +1,9 @@
 import sys
 import pandas as pd
-
 from functools import partial
+from pandas import read_csv
+
 from PyQt5.QtWidgets import QWidget, QApplication, QLabel, QVBoxLayout, QLineEdit, QGridLayout, QPushButton
-from PyQt5.QtCore import QObject, pyqtSignal, pyqtSlot
-from PyQt5.QtGui import QWhatsThisClickedEvent, QMouseEvent
-from pandas import DataFrame, read_csv
 
 from passenger import Passengers
 
@@ -50,8 +48,6 @@ class TitanicStatApp:
         input_class = QLineEdit()
         input_gender = QLineEdit()
 
-
-
         grid = QGridLayout()
         grid.setSpacing(5)
 
@@ -64,21 +60,24 @@ class TitanicStatApp:
         grid.addWidget(pas_gender, 3, 0)
         grid.addWidget(input_gender, 3, 1)
 
+        def save_form_result():
+            tmp_age = input_age.text()
+            tmp_class = input_class.text()
+            tmp_gender = input_gender.text()
+            self.probability_of_surviving(input_age=tmp_age, input_class=tmp_class, input_gender=tmp_gender)
+
         btn = QPushButton('ok')
-        btn.clicked.connect(partial(self.probability_of_surviving, input_age=input_age.text(), \
-                                    input_class=input_class.text(), input_gender=input_gender.text()))
-        print(input_age.text())
+        btn.clicked.connect(save_form_result)
+
         grid.addWidget(btn, 7, 0)
         return grid
 
     def probability_of_surviving(self, input_age, input_class, input_gender):
-        print(input_age)
         input_age = int(input_age)
         input_class = int(input_class)
         input_gender = str(input_gender)
-        print(type(input_age))
-        res = QLabel('Probability of surviving: ' + pas.probability_of_surviving( \
-            input_age=input_age, input_class=(input_class), input_gender=str(input_gender)))
+        res = QLabel('Probability of surviving: ' + str(pas.probability_of_surviving( \
+            input_age=input_age, input_class=input_class, input_gender=input_gender)))
         grid = QGridLayout()
         grid.setSpacing(5)
 
